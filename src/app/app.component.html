@@ -1,3 +1,20 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container">
+  <a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank">GET A RANDOM ARTICLE</a>
+  <form [ngClass]="{search: searchOpen}">
+    <input name="search-input" [(ngModel)]="query" [ngClass]="{search: searchOpen}" type="text">
+    <div (click)="startSearch($event)" class="eks">
+      <fa name="search"></fa>
+    </div>
+  </form>
+  <p class="search-click" (click)="searchWiki()" *ngIf="searchOpen">CLICK TO SEARCH</p>
+  <div class="results-container">
+    <ul>
+      <li class="results" *ngFor="let item of items">
+        <a href="https://en.wikipedia.org/?curid={{item.pageid}}" target="_blank">
+          <p>{{item.title}}</p>
+          <p>{{item.extract}}</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

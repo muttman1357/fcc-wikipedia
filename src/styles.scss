@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+$background: #092B40;
+$color: #D96F32;
+
+html {
+  background-color: $background;
+}
+
+body {
+  color: $color;
+  font-family: 'Open Sans', sans-serif;
+}
+
+html, body {
+  height: 100%;
+}

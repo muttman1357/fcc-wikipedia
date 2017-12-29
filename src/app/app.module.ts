@@ -2,8 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-
 import { AppComponent } from './app.component';
+import {AngularFontAwesomeModule} from 'angular-font-awesome';
+import {AppModelService} from './models/app-model.service';
 
 @NgModule({
   declarations: [
@@ -12,9 +13,10 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AngularFontAwesomeModule
   ],
-  providers: [],
+  providers: [AppModelService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
